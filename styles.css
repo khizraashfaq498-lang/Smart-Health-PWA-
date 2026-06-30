@@ -1,0 +1,425 @@
+/* login Part */ 
+
+:root {
+    --border-width: 4px;
+    --border-color: #000;
+    --font-main: system-ui, -apple-system, sans-serif;
+    --color-bg: #f9fafb;
+    --color-white: #ffffff;
+    --color-red-500: #ef4444;
+    --color-blue-50: #eff6ff;
+    --color-green-50: #f0fdf4;
+    --color-yellow-100: #fef9c3;
+    --color-yellow-400: #facc15;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+
+.center-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.space-y-6 > * + * { margin-top: 1.5rem; }
+.text-center { text-align: center; }
+.hidden { display: none !important; }
+
+
+h1, h2, h3 { margin: 0; font-weight: 700; color: var(--border-color); }
+.text-3xl { font-size: 1.875rem; }
+.text-xl { font-size: 1.25rem; }
+.font-bold { font-weight: 700; }
+.text-gray { color: #374151; }
+.text-link { 
+    color: #2563eb; 
+    text-decoration: underline; 
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 1.25rem; 
+    font-weight: 700; 
+}
+
+
+.card {
+    background: var(--color-white);
+    border: var(--border-width) solid var(--border-color);
+    /* Merged from Brutalist overrides used in your design */
+    border-radius: 0px; 
+    box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.card-header { padding: 1.5rem; }
+.card-content { padding: 1.5rem; }
+
+
+.input-group { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; }
+.label { font-size: 1.25rem; font-weight: 700; color: #000; }
+
+.input-field, .select-field {
+    height: 4rem;
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 0.375rem;
+    width: 100%;
+}
+
+
+.btn {
+    height: 5rem;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 0.375rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}
+
+.btn-primary { background-color: #000; color: #fff; border: none; }
+.btn-primary:hover { background-color: #1f2937; }
+
+
+.stat-box {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 2px solid rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+}
+
+.bg-blue { background-color: var(--color-blue-50); border-color: #bfdbfe; }
+.bg-green { background-color: var(--color-green-50); border-color: #bbf7d0; }
+.bg-yellow { background-color: var(--color-yellow-100); border-color: var(--color-yellow-400); }
+
+.alert-error {
+    background-color: #fee2e2;
+    border: 4px solid #ef4444;
+    color: #7f1d1d;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+
+.border-4 {
+    border-width: 4px !important;
+}
+
+.border-black {
+    border-color: #000000 !important;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f9fafb;
+    overflow-x: hidden;
+}
+
+
+.dashboard {
+    padding: 16px;           /* space around content */
+    padding-bottom: 100px;   /* space for bottom nav */
+    max-width: 480px;        /* optional, for phone-like layout */
+    margin: auto;            /* center on PC */
+    box-sizing: border-box;
+}
+
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+}
+
+
+.card:first-child {
+    margin-top: 16px;
+}
+
+.vitals-grid {
+    display: flex;
+    justify-content: space-between; /* Spreads them out evenly */
+    align-items: center;
+    gap: 0; /* Remove gap so they feel like one unit */
+    margin-top: 1rem;
+    text-align: center;
+    /* Optional: Add a subtle top border to separate from header text */
+    border-top: 2px solid #eee; 
+    padding-top: 1rem;
+}
+
+.vitals-grid div {
+    flex: 1;
+    padding: 0.5rem;
+    /* Remove the individual boxes */
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.vitals-grid div:not(:last-child) {
+    border-right: 2px solid #eee;
+}
+
+.vitals-grid strong {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--border-color);
+}
+
+.vitals-grid small {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--gray-600);
+}
+
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+    align-items: center;
+}
+
+.stats-grid .card.center {
+    text-align: center;
+    padding: 0.75rem;
+    margin-bottom: 0;
+}
+
+.stats-grid .stat-card {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem; 
+}
+
+@media (max-width: 360px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.vitals-grid .vital-red { background-color: var(--color-red-50); }
+.vitals-grid .vital-blue { background-color: var(--color-blue-50); }
+.vitals-grid .vital-green { background-color: var(--color-green-50); }
+
+
+.med-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* --- Bottom nav --- */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 75px;
+    background: var(--color-white);
+    /* Thick top border to match brutalist style */
+    border-top: var(--border-width) solid var(--border-color); 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+}
+
+.bottom-nav button {
+    background: none;
+    border: none;
+    text-align: center;
+    font-family: var(--font-main);
+    font-size: 13px;
+    font-weight: 700; /* Heavier font weight */
+    color: var(--border-color);
+    cursor: pointer;
+    transition: transform 0.1s;
+    padding: 10px;
+}
+
+.bottom-nav button span {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 2px;
+}
+
+
+.bottom-nav button.active {
+    color: #000;
+    background: var(--color-blue-50); /* Subtle fill when active */
+    border: 2px solid var(--border-color);
+    box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+    transform: translate(-2px, -2px);
+}
+/* Chatbot Button */
+
+
+/* Chatbot Toggle Button */
+#chatbot-button {
+    position: fixed;
+    bottom: 95px;
+    right: 25px;
+    width: 65px;
+    height: 65px;
+    background: #8b5cf6; 
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: bold;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+    z-index: 1001;
+    transition: all 0.1s;
+}
+
+#chatbot-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+}
+
+/* Chatbot Card */
+#chatbot-card {
+  position: fixed;
+  bottom: 110px;
+  right: 30px;
+  width: 320px;
+  background: var(--color-white);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 0px; /* Removed rounding to match .card */
+  box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+  padding: 0; /* Padding handled by internal sections */
+  z-index: 1000;
+  overflow: hidden;
+}
+
+/* Header */
+.chatbot-header {
+  background-color: var(--border-color);
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 1.25rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Content Area */
+#chatbot-content {
+  padding: 1.5rem;
+  font-size: 1rem;
+  min-height: 100px;
+  background-color: var(--color-bg);
+  border-bottom: var(--border-width) solid var(--border-color);
+}
+
+/* Message Styles */
+.bot-msg {
+  font-family: var(--font-main);
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: var(--color-blue-50);
+  border: 2px solid var(--border-color);
+}
+
+/* Actions/Buttons Container */
+.chatbot-actions {
+  padding: 1rem;
+  background: var(--color-white);
+}
+
+/* Choice Buttons */
+.chatbot-actions button, .chat-option {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 12px;
+  border: 3px solid var(--border-color);
+  border-radius: 4px;
+  background: var(--color-white);
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000;
+  text-align: left;
+  transition: all 0.1s;
+}
+
+.chatbot-actions button:hover, .chat-option:hover {
+  background: var(--color-yellow-100);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+}
+
+.chatbot-actions button:active {
+  transform: translate(0, 0);
+  box-shadow: none;
+}
+
+/* Utility */
+.hidden {
+  display: none !important;
+}
+/* End of Chatbot */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

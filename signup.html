@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeniorCare - Signup</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="center-screen">
+        <div class="card" style="width: 100%; max-width: 500px;">
+            <div id="signupStep">
+                <div class="card-header text-center">
+                    <h1 class="text-3xl">Create Account</h1>
+                    <p class="text-xl text-gray">Senior Sign Up</p>
+                </div>
+                <div class="card-content">
+                    <form id="signupForm" class="space-y-6">
+                        <div class="input-group">
+                            <label class="label">Full Name *</label>
+                            <input type="text" id="name" class="input-field" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="label">Phone Number</label>
+                            <input type="tel" id="phone" class="input-field" placeholder="Enter phone number">
+                        </div>
+
+                        <div class="input-group">
+                            <label class="label">Emergency Contact</label>
+                            <input type="tel" id="emergencyContact" class="input-field" placeholder="Enter emergency contact">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Create Account</button>
+
+                        <div class="text-center" style="margin-top: 1.5rem;">
+                            <a href="index.html" class="text-link">Already have an account? Login</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="successStep" class="hidden">
+                <div class="card-header text-center">
+                    <h1 class="text-3xl">Account Created!</h1>
+                    <p class="text-xl text-gray">Please write down these passwords</p>
+                </div>
+                <div class="card-content space-y-6">
+                    <div class="stat-box bg-yellow">
+                        <p class="label">Your Senior ID:</p>
+                        <div id="resSeniorId" class="text-center text-3xl font-bold p-2 bg-white border-4 border-black rounded"></div>
+                    </div>
+
+                    <div class="stat-box bg-blue">
+                        <p class="label">Family Password:</p>
+                        <div id="resFamilyPass" class="text-center text-3xl font-bold p-2 bg-white border-4 border-black rounded"></div>
+                        <p class="text-gray" style="margin-top:0.5rem">Share this with family members</p>
+                    </div>
+
+                    <div class="stat-box bg-green">
+                        <p class="label">Doctor Password:</p>
+                        <div id="resDoctorPass" class="text-center text-3xl font-bold p-2 bg-white border-4 border-black rounded"></div>
+                        <p class="text-gray" style="margin-top:0.5rem">Share this with your doctor</p>
+                    </div>
+
+                    <button id="btnContinue" class="btn btn-primary">Continue to Dashboard</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="utils.js"></script>
+    <script src="signup.js"></script>
+</body>
+</html>

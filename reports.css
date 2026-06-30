@@ -1,0 +1,161 @@
+/* --- Use Styles.css Variables --- */
+:root {
+    --border-width: 4px;
+    --border-color: #000;
+    --font-main: system-ui, -apple-system, sans-serif;
+    --color-bg: #f9fafb;
+    --color-white: #ffffff;
+    --color-red-bg: #fee2e2;      /* Light Red Card */
+    --color-red-maroon: #991b1b;  /* Text/Accents */
+    --color-red-vibrant: #ef4444; /* Highlights */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    margin: 0;
+    color: var(--border-color);
+}
+
+.read-only-banner {
+    background: #fecaca;
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.page-container {
+    padding: 20px;
+    padding-bottom: 120px;
+    max-width: 480px;
+    margin: auto;
+}
+
+/* --- The Card Theme (Matches Meds/Steps) --- */
+.card {
+    background: var(--color-red-bg); 
+    padding: 25px;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 0px; 
+    box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+    margin-bottom: 25px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    border-bottom: 3px solid var(--border-color);
+    padding-bottom: 5px;
+}
+
+/* --- Row Styling --- */
+.summary-row, .report-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-white);
+    border: 3px solid var(--border-color);
+    padding: 12px;
+    margin-bottom: 10px;
+    box-shadow: 4px 4px 0px 0px #000;
+}
+
+.summary-row p, .report-row p {
+    margin: 0;
+    font-weight: 800;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.summary-row span, .status-pill {
+    background: var(--color-red-maroon);
+    color: white;
+    padding: 4px 10px;
+    font-weight: 900;
+    font-size: 0.9rem;
+}
+
+.report-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+/* --- Special handling for Vitals History (Multi-line) --- */
+.vitals-history .report-row {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.vitals-data-points {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* --- Bottom nav --- */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 75px;
+    background: var(--color-white);
+    /* Thick top border to match brutalist style */
+    border-top: var(--border-width) solid var(--border-color); 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+}
+
+.bottom-nav button {
+    background: none;
+    border: none;
+    text-align: center;
+    font-family: var(--font-main);
+    font-size: 13px;
+    font-weight: 700; /* Heavier font weight */
+    color: var(--border-color);
+    cursor: pointer;
+    transition: transform 0.1s;
+    padding: 10px;
+}
+
+.bottom-nav button span {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 2px;
+}
+
+/* Active State: Brutalist Highlight */
+.bottom-nav button.active {
+    color: #000;
+    background: var(--color-blue-50); /* Subtle fill when active */
+    border: 2px solid var(--border-color);
+    box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+    transform: translate(-2px, -2px);
+}
+/* Chatbot Button */

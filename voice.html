@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Voice Input</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="voice.css" />
+  <link rel="manifest" href="manifest.json">
+</head>
+<body data-page="voice">
+  <nav class="bottom-nav">
+    <button data-page="dashboard"><span>🏠</span><small>Home</small></button>
+    <button data-page="vitals"><span>❤️</span><small>Vitals</small></button>
+    <button data-page="medications"><span>💊</span><small>Meds</small></button>
+    <button data-page="reports"><span>📊</span><small>Reports</small></button>
+    <button data-page="voice"><span>🎤</span><small>Voice</small></button>
+    <button data-page="steps"><span>👣</span><small>Steps</small></button>
+  </nav>
+
+  <main class="page-container">
+    <section class="card">
+      <h2>Add Data Using Voice</h2>
+      <p class="subtitle">Tap a card, speak clearly, then confirm before saving.</p>
+      <p id="voiceStatus" class="status-msg"></p>
+      <p id="voiceSupportNote" class="support-note" aria-live="polite"></p>
+
+      <div id="voiceCards" class="voice-grid">
+        <button class="voice-card" data-action="heartRate">❤️ Add Heart Rate</button>
+        <button class="voice-card" data-action="bloodPressure">🩺 Add Blood Pressure</button>
+        <button class="voice-card" data-action="sugarLevel">🧪 Add Sugar Level</button>
+        <button class="voice-card" data-action="temperature">🌡️ Add Temperature</button>
+        <button class="voice-card" data-action="medicine">💊 Add Medicine</button>
+        <button class="voice-card" data-action="markTaken">✅ Mark Medicine as Taken</button>
+      </div>
+
+      <section id="manualInputBox" class="manual-box hidden" aria-live="polite">
+        <h3>Manual Input</h3>
+        <p>Voice recognition is limited on this browser. You can type details and save.</p>
+        <label for="manualAction">Action</label>
+        <select id="manualAction">
+          <option value="heartRate">Add Heart Rate</option>
+          <option value="bloodPressure">Add Blood Pressure</option>
+          <option value="sugarLevel">Add Sugar Level</option>
+          <option value="temperature">Add Temperature</option>
+          <option value="medicine">Add Medicine</option>
+          <option value="markTaken">Mark Medicine as Taken</option>
+        </select>
+        <label for="manualTranscript">Details</label>
+        <textarea id="manualTranscript" rows="3" placeholder="Example: 120 over 80 OR Paracetamol 500mg 8 pm"></textarea>
+        <button id="manualProcess" type="button">Use Typed Input</button>
+      </section>
+
+      <div id="confirmOverlay" class="confirm-overlay hidden">
+        <div id="confirmBox" class="confirm-box">
+        <p id="confirmText"></p>
+        <div class="confirm-actions">
+          <button id="confirmSave" type="button">Confirm</button>
+          <button id="confirmCancel" type="button" class="secondary">Cancel</button>
+        </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="utils.js"></script>
+  <script src="bottom-nav.js"></script>
+  <script src="voice.js"></script>
+</body>
+</html>

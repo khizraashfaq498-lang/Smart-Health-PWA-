@@ -1,0 +1,265 @@
+/*Pedometer*/
+
+/* --- Use Styles.css Variables --- */
+:root {
+    --border-width: 4px;
+    --border-color: #000;
+    --font-main: system-ui, -apple-system, sans-serif;
+    --color-bg: #f9fafb;
+    --color-white: #ffffff;
+    /* New Vibrant Purple Palette */
+    --color-purple-bg: #e9d5ff; /* Rich Lavender Background */
+    --color-purple-vibrant: #a855f7; /* Deep Grape Purple */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    margin: 0;
+    color: var(--border-color);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.read-only-banner {
+    background: #ede9fe;
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.page-container {
+    padding: 20px;
+    padding-bottom: 120px;
+    max-width: 480px;
+    margin: auto;
+}
+
+/* --- Brutalist Card/Form Styling (Purple Theme) --- */
+.card, .form-container {
+    background: var(--color-purple-bg); 
+    padding: 25px;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 0px; 
+    box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+    margin-bottom: 25px;
+}
+
+/* --- Header inside the box (Purple Shadow) --- */
+.card h2, .page-title {
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+label, .card-title {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    height: 3.5rem;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 0px; 
+    font-size: 1.25rem;
+    font-weight: 700;
+    background: var(--color-white);
+}
+
+input:focus {
+    outline: none;
+    background-color: #faf5ff;
+    box-shadow: 4px 4px 0px 0px var(--border-color);
+}
+
+/* --- Vibrant Purple Primary Button --- */
+.primary-btn {
+    width: 100%;
+    height: 4rem;
+    background: var(--color-purple-vibrant);
+    color: #000;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 0px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px 0px var(--border-color);
+    transition: all 0.1s ease;
+}
+
+.primary-btn:hover {
+    background: #9333ea;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px var(--border-color);
+}
+
+.primary-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px 0px var(--border-color);
+}
+
+/* --- Steps Circle Styling --- */
+.steps-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.bg-circle {
+    fill: none;
+    stroke: var(--color-white); /* CHANGED: Background circle is now White */
+    stroke-width: 16;
+}
+
+.progress-circle {
+    fill: none;
+    stroke: var(--color-purple-vibrant); /* CHANGED: Filling is Dark Purple */
+    stroke-width: 16;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    transition: stroke-dashoffset 0.6s ease;
+}
+
+.circle-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.circle-text h3 {
+    margin: 0;
+    font-size: 32px; /* Made slightly larger */
+    font-weight: 900;
+}
+
+/* CHANGED: Total Goal text styling */
+.goal-text {
+    margin-top: 10px;
+    color: #000;
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.goal-source {
+    margin-top: 6px;
+}
+
+/* --- Record List --- */
+.record-card .record-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 2px solid var(--border-color);
+    font-weight: 700;
+}
+
+
+
+/* --- Bottom nav --- */
+/* --- Bottom nav --- */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 75px;
+    background: var(--color-white);
+    /* Thick top border to match brutalist style */
+    border-top: var(--border-width) solid var(--border-color); 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+}
+
+.bottom-nav button {
+    background: none;
+    border: none;
+    text-align: center;
+    font-family: var(--font-main);
+    font-size: 13px;
+    font-weight: 700; /* Heavier font weight */
+    color: var(--border-color);
+    cursor: pointer;
+    transition: transform 0.1s;
+    padding: 10px;
+}
+
+.bottom-nav button span {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 2px;
+}
+
+/* Active State: Brutalist Highlight */
+.bottom-nav button.active {
+    color: #000;
+    background: var(--color-blue-50); /* Subtle fill when active */
+    border: 2px solid var(--border-color);
+    box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+    transform: translate(-2px, -2px);
+}
+/* Chatbot Button */
+
+
+.secondary-btn {
+    width: 100%;
+    height: 4rem;
+    background: var(--color-white);
+    color: #000;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 0px;
+    font-size: 1.35rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px 0px var(--border-color);
+    transition: all 0.1s ease;
+}
+
+.secondary-btn:hover {
+    background: #f3f4f6;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px var(--border-color);
+}
+
+.secondary-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px 0px var(--border-color);
+}
+
+.record-card .form {
+    display: grid;
+    gap: 12px;
+}

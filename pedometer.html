@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Steps Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="steps.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body data-page="steps">
+<nav class="bottom-nav">
+        <button data-page="dashboard">
+            <span>🏠</span>
+            <small>Home</small>
+        </button>
+        <button data-page="vitals">
+            <span>❤️</span>
+            <small>Vitals</small>
+        </button>
+        <button data-page="medications">
+            <span>💊</span>
+            <small>Meds</small>
+        </button>
+        <button data-page="reports">
+            <span>📊</span>
+            <small>Reports</small>
+        </button>
+        <button data-page="voice">
+            <span>🎤</span>
+            <small>Voice</small>
+        </button>
+        <button data-page="steps">
+            <span>👣</span>
+            <small>Steps</small>
+        </button>
+</nav>
+
+<div class="page-container">
+
+
+  <!-- CIRCULAR PROGRESS CARD -->
+  <div class="card steps-card">
+    <h2>Daily Steps</h2>
+    <div class="circle-container">
+      <svg width="200" height="200">
+        <circle cx="100" cy="100" r="90" class="bg-circle"></circle>
+        <circle cx="100" cy="100" r="90" class="progress-circle" id="progressCircle"></circle>
+      </svg>
+      <div class="circle-text">
+        <h3 id="stepsCount">0</h3>
+        <p>Steps</p>
+      </div>
+    </div>
+
+    <p class="goal-text">
+      Goal: <span id="stepGoalText">5000</span> steps
+    </p>
+    <div class="goal-source">
+      <span id="stepGoalSource" class="source-badge source-patient">Patient Entered</span>
+    </div>
+  </div>
+
+<div class="card record-card edit-only" id="recordStepsCard">
+  <h3 class="card-title">Record Steps</h3>
+  <div class="form">
+    <button id="startWalkBtn" class="primary-btn">🚶 Start Walking</button>
+    <button id="stopWalkBtn" class="secondary-btn">⏹ Stop</button>
+  </div>
+</div>
+  
+<div class="card add-steps-card edit-only" id="addStepsCard">
+  <h3 class="card-title">Add Steps Manually</h3>
+  <div class="form">
+    <input type="number" id="stepsInput" placeholder="Enter steps walked">
+    <button id="addStepsBtn" class="primary-btn">Add Steps</button>
+  </div>
+</div>
+
+<div class="card goal-card edit-only">
+  <h3 class="card-title" id="goalCardTitle">Update Daily Goal</h3>
+  <div class="form">
+    <input type="number" id="goalInput" placeholder="Enter new goal">
+    <button id="updateGoalBtn" class="primary-btn">Update Goal</button>
+  </div>
+</div>
+
+</div>
+</body>
+<script src="utils.js"></script>
+<script src="bottom-nav.js"></script>
+<script src="steps.js"></script>
+</html>
+
+
+
+
+
+
+
+
+
+
+

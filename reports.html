@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Health Reports</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="reports.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body data-page="reports">
+  <nav class="bottom-nav">
+    <button data-page="dashboard"><span>🏠</span><small>Home</small></button>
+    <button data-page="vitals"><span>❤️</span><small>Vitals</small></button>
+    <button data-page="medications"><span>💊</span><small>Meds</small></button>
+    <button data-page="reports"><span>📊</span><small>Reports</small></button>
+    <button data-page="voice"><span>🎤</span><small>Voice</small></button>
+    <button data-page="steps"><span>👣</span><small>Steps</small></button>
+  </nav>
+
+  <div class="page-container">
+
+    <div class="card">
+      <h2>Health Reports</h2>
+      <h3 class="card-title">Weekly Summary</h3>
+      <div class="summary-row">
+        <p>Total Steps</p>
+        <span id="weeklySteps">0</span>
+      </div>
+      <div class="summary-row">
+        <p>Missed Medicines</p>
+        <span id="missedMeds">0</span>
+      </div>
+    </div>
+    <div class="card">
+      <h3 class="card-title">Clinical Targets</h3>
+      <div id="clinicalTargets" class="report-list"></div>
+    </div>
+    <div class="card">
+      <h3 class="card-title">Medication Compliance</h3>
+      <div id="medTable" class="report-list">
+        </div>
+    </div>
+    <div class="card">
+      <h3 class="card-title">Vitals History</h3>
+      <div id="vitalsTable" class="report-list vitals-history">
+        </div>
+    </div>
+  </div>
+  <script src="utils.js"></script>
+  <script src="bottom-nav.js"></script>
+  <script src="reports.js"></script>
+</body>
+</html>

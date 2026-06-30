@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeniorCare - Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="center-screen">
+        <div class="card" style="width: 100%; max-width: 500px;">
+            <div class="card-header text-center">
+                <h1 class="text-3xl">Welcome Back</h1>
+                <p class="text-xl text-gray">Login to SeniorCare</p>
+            </div>
+            <div class="card-content">
+                <form id="loginForm" class="space-y-6">
+                    <div class="input-group">
+                        <label class="label">I am a...</label>
+                        <select id="role" class="select-field">
+                            <option value="senior">Senior Citizen</option>
+                            <option value="family">Family Member</option>
+                            <option value="doctor">Doctor</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="label">Senior ID *</label>
+                        <input type="text" id="seniorId" class="input-field" placeholder="SC-XXXXXX" required>
+                    </div>
+
+                    <div id="passwordContainer" class="input-group hidden">
+                        <label class="label">Password *</label>
+                        <input type="password" id="password" class="input-field" placeholder="Enter 6-digit password" maxlength="6">
+                    </div>
+
+                    <div id="errorBox" class="alert-error hidden"></div>
+
+                    <button type="submit" class="btn btn-primary">Login</button>
+
+                    <div class="text-center" style="margin-top: 1.5rem;">
+                        <a href="signup.html" class="text-link">New user? Create Account</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="utils.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
+
+ 
+
+

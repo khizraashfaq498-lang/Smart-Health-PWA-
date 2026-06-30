@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Health Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body data-page="dashboard">
+
+<nav class="bottom-nav">
+        <button data-page="dashboard">
+            <span>🏠</span>
+            <small>Home</small>
+        </button>
+        <button data-page="vitals">
+            <span>❤️</span>
+            <small>Vitals</small>
+        </button>
+        <button data-page="medications">
+            <span>💊</span>
+            <small>Meds</small>
+        </button>
+        <button data-page="reports">
+            <span>📊</span>
+            <small>Reports</small>
+        </button>
+        <button data-page="voice">
+            <span>🎤</span>
+            <small>Voice</small>
+        </button>
+        <button data-page="steps">
+            <span>👣</span>
+            <small>Steps</small>
+        </button>
+    </nav>
+<div class="dashboard">
+
+  <div class="card">
+    <h3>❤️ Latest Vitals</h3>
+    <div class="vitals-grid">
+      <div>
+        <strong id="dash-bp">--</strong>
+        <small>Blood Pressure</small>
+      </div>
+      <div>
+        <strong id="dash-hr">--</strong>
+        <small>Heart Rate</small>
+      </div>
+      <div>
+        <strong id="dash-temp">--</strong>
+        <small>Temperature</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>💊 Today's Medications</h3>
+    <ul id="medList"></ul>
+  </div>
+
+  <div class="stats-grid">
+    <div class="card center stat-card">
+      🚶‍♂️
+      <strong id="stepsToday"></strong>
+      <small>Steps Today</small>
+    </div>
+    <div class="card center stat-card">
+      🎯
+      <strong id="stepGoal"></strong>
+      <small>Daily Goal</small>
+    </div>
+  </div>
+<div id="chatbot-button">💬</div>
+
+<!-- Chatbot Popup Card -->
+<div id="chatbot-card" class="hidden">
+  <div class="chatbot-header">
+    Health Assistant
+    <span id="closeChatbot">✖</span>
+  </div>
+
+  <div id="chatbot-content">
+    <p>Hello 👋 How can I help you today?</p>
+  </div>
+
+  <div class="chatbot-actions">
+    <button data-action="todaySummary">📊 Today’s Summary</button>
+    <button data-action="stepsAdvice">👣 Steps Guidance</button>
+    <button data-action="vitalsCheck">❤️ Vitals Status</button>
+    <button data-action="medicationCheck">💊 Medications</button>
+  </div>
+</div>
+
+</div>
+
+<script src="utils.js"></script>
+<script src="login.js"></script>
+<script src="medications.js"></script>
+<script src="vitals.js"></script>
+<script src="steps.js"></script>
+<script src="reports.js"></script>
+<script src="chatbot.js"></script>
+<script src="dashboard.js"></script>
+<script src="bottom-nav.js"></script>
+<script src="chatbot.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

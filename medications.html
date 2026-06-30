@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Medication Schedule</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="meds.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body data-page="medications">
+
+<nav class="bottom-nav">
+  <button data-page="dashboard">
+    <span>🏠</span>
+    <small>Home</small>
+  </button>
+  <button data-page="vitals">
+    <span>❤️</span>
+    <small>Vitals</small>
+  </button>
+  <button data-page="medications" class="active">
+    <span>💊</span>
+    <small>Meds</small>
+  </button>
+  <button data-page="reports">
+    <span>📊</span>
+    <small>Reports</small>
+  </button>
+  <button data-page="voice">
+            <span>🎤</span>
+            <small>Voice</small>
+        </button>
+        <button data-page="steps">
+    <span>👣</span>
+    <small>Steps</small>
+  </button>
+</nav>
+
+<div class="page-container">
+
+  <!-- ADD MEDICATION CARD -->
+  <div class="card">
+
+    <form id="medForm">
+       <h2>Medication Schedule</h2>
+      <input type="text" id="medName" placeholder="Medicine Name" required>
+      <input type="text" id="medDosage" placeholder="Dosage (e.g., 10mg)" required>
+      <input type="time" id="medTime" required>
+      <button type="submit">Add Medicine</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>Today's Medicines</h2>
+    <ul id="medList"></ul>
+  </div>
+
+</div>
+
+<audio id="alarmSound">
+  <source src="alarm.mp3" type="audio/mpeg">
+</audio>
+
+<script src="utils.js"></script>
+<script src="bottom-nav.js"></script>
+<script src="medications.js"></script>
+</body>
+</html>
+
+
+
+
+

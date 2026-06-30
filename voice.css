@@ -1,0 +1,228 @@
+:root {
+  --border-width: 4px;
+  --border-color: #000;
+  --font-main: system-ui, -apple-system, sans-serif;
+  --color-bg: #f9fafb;
+  --color-white: #ffffff;
+  --color-red-bg: #fee2e2;
+  --color-red-maroon: #991b1b;
+  --color-blue-50: #eff6ff;
+}
+
+* { box-sizing: border-box; }
+body {
+  font-family: var(--font-main);
+  background: var(--color-bg);
+  margin: 0;
+  color: var(--border-color);
+}
+
+.page-container {
+  padding: 20px;
+  padding-bottom: 120px;
+  max-width: 480px;
+  margin: auto;
+}
+
+.card {
+  background: var(--color-red-bg);
+  padding: 22px;
+  border: var(--border-width) solid var(--border-color);
+  box-shadow: 10px 10px 0 0 #000;
+}
+
+h2 {
+  margin: 0 0 10px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.status-msg {
+  min-height: 26px;
+  margin: 0;
+  font-weight: 800;
+  text-align: center;
+}
+
+.support-note {
+  margin: 8px 0 14px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.voice-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.voice-card {
+  border: 3px solid var(--border-color);
+  background: var(--color-white);
+  box-shadow: 5px 5px 0 0 #000;
+  font-size: 1rem;
+  font-weight: 800;
+  text-align: left;
+  padding: 14px;
+  cursor: pointer;
+}
+
+.voice-card:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.voice-card.listening {
+  background: #dcfce7;
+  border-color: #166534;
+}
+
+.manual-box {
+  margin-top: 16px;
+  border: 3px solid var(--border-color);
+  background: #fff;
+  padding: 12px;
+}
+
+.manual-box h3 {
+  margin: 0 0 8px;
+}
+
+.manual-box p {
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.manual-box label {
+  display: block;
+  font-weight: 700;
+  margin: 8px 0 6px;
+}
+
+.manual-box select,
+.manual-box textarea {
+  width: 100%;
+  border: 2px solid #000;
+  padding: 8px;
+  font: inherit;
+}
+
+.manual-box button {
+  width: 100%;
+  margin-top: 10px;
+  border: 3px solid #000;
+  font-weight: 800;
+  padding: 10px;
+  cursor: pointer;
+  background: #000;
+  color: #fff;
+}
+
+.confirm-box {
+  margin-top: 16px;
+  border: 3px solid var(--border-color);
+  background: #fff;
+  padding: 12px;
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.confirm-actions button {
+  flex: 1;
+  border: 3px solid #000;
+  font-weight: 800;
+  padding: 10px;
+  cursor: pointer;
+  background: #000;
+  color: #fff;
+}
+
+.confirm-actions .secondary {
+  background: #fff;
+  color: #000;
+}
+
+.hidden { display: none !important; }
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 75px;
+  background: #fff;
+  border-top: var(--border-width) solid var(--border-color);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+}
+
+.bottom-nav button {
+  background: none;
+  border: none;
+  text-align: center;
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--border-color);
+  cursor: pointer;
+  transition: transform 0.1s;
+  padding: 10px;
+}
+
+.bottom-nav button span {
+  font-size: 24px;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.bottom-nav button.active {
+  color: #000;
+  background: var(--color-blue-50);
+  border: 2px solid var(--border-color);
+  box-shadow: 3px 3px 0 0 #000;
+  transform: translate(-2px, -2px);
+}
+/* ===== MODAL CONFIRM POPUP ===== */
+
+/* ===== CONFIRM MODAL (EXACT CARD CLONE) ===== */
+
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+/* Use the SAME card styling, no reinterpretation */
+.confirm-overlay .confirm-box {
+  margin: 0;
+  width: min(92%, 420px);
+
+  /* FORCE identical card appearance */
+  background: #ffffff !important;
+  border: 3px solid var(--border-color);
+  box-shadow: 10px 10px 0 0 #000;
+  border-radius: 0;
+
+  opacity: 1;
+}
+
+
